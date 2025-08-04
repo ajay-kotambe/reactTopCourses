@@ -1,13 +1,23 @@
 import "./Cards.css";
-import Card from './Card'
+import Card from "./Card";
 
-const Cards = () => {
-
-    return <div>
-        <Card>
-            
-        </Card>
+const Cards = ({ courses }) => {
+  let allCourses = [];
+  const getCourses = () => {
+    Object.values(courses).forEach((courseCategory) => {
+      courseCategory.forEach((course) => {
+        allCourses.push(course);
+      });
+    });
+    return allCourses;
+  };
+  return (
+    <div>
+      {getCourses().map((course) => {
+        return <Card key={course.id} course={course} />;
+      })}
     </div>
+  );
 };
 
 export default Cards;
