@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import CheckIconsNToast from "./components/CheckIconsNToast";
 
 function App() {
-  const [courses, setCourses] = useState(null); // useState([]) can use this if u don't have loader component
+  const [courses, setCourses] = useState([]); // useState(null) can use this if u don't have loader component
   const [loading, setLoading] = useState(true);
 
   const [category, setCategory] = useState("All"); // useState(filterData[0].title)
@@ -26,14 +26,13 @@ function App() {
     try {
       const res = await fetch(apiUrl);
       const output = await res.json();
-      // console.log(output);
       setCourses(output.data);
-      // console.log(output.data);
     } catch (error) {
       toast.error("Something went wrong");
-      <ToastContainer />;
+
       console.log("Something went wrong");
     }
+
     setLoading(false);
   };
   return (
@@ -48,7 +47,13 @@ function App() {
           setCategory={setCategory}
         />
       </div>
-      <div>{loading ? <Spinner /> : <Cards courses={courses}  category={category}/>}</div>
+      <div>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <Cards courses={courses} category={category} />
+        )}
+      </div>
       {/* <CheckIconsNToast/> */}
       {/* Required continer to show the toast */}
       <ToastContainer position="bottom-right" />
