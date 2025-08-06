@@ -24,6 +24,7 @@ const CheckIconsNToast = () => {
         <button onClick={notify}>Show Toast</button>
 
         {/*  Required container */}
+        <ToastContainer />
       </div>
     </div>
   );

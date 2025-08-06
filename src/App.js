@@ -3,36 +3,49 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Filter from "./components/Filter";
 import Cards from "./components/Cards";
-// import { useState } from "react";
+import Spinner from "./components/Spinner";
+
 import { apiUrl, filterData } from "./Data";
 import { useEffect, useState } from "react";
-imponp rt { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import CheckIconsNToast from "./components/CheckIconsNToast";
 
 function App() {
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(apiUrl);
-        const output = await res.json();
-        // console.log(output);
-        setCourses(output.data);
-        // console.log(output.data);
-      } catch (error) {
-        toast.error("Something went wrong");
-      }
-    };
     fetchData();
   }, []);
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(apiUrl);
+      const output = await res.json();
+      // console.log(output);
+      setCourses(output.data);
+      // console.log(output.data);
+    } catch (error) {
+      toast.error("Something went wrong");
+      <ToastContainer />;
+      console.log("Something went wrong");
+    }
+    setLoading(false);
+  };
   return (
     <div className="">
-      <Navbar />
-      <Filter filterData={filterData} />
-      <Cards courses={courses} />
+      <div>
+        <Navbar />
+      </div>
+      <div>
+        <Filter filterData={filterData} />
+      </div>
+      <div>{loading ? <Spinner /> : <Cards courses={courses} />}</div>
       {/* <CheckIconsNToast/> */}
+      {/* Required continer to show the toast */}
+      <ToastContainer />
     </div>
   );
 }
