@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Filter from "./components/Filter";
 import Cards from "./components/Cards";
-import Spinner from "./components/Spinner";
+import Spinner from "./components/Loader";
 
 import { apiUrl, filterData } from "./Data";
 import { useEffect, useState } from "react";
@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import CheckIconsNToast from "./components/CheckIconsNToast";
 
 function App() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(null);// useState([]) can use this if u don't have loader component
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

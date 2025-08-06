@@ -5,7 +5,7 @@ const Card = ({ course }) => {
   return (
     <div>
       <div>
-        <img src={course.image.url} alt="" />
+        <img src={course.image.url} alt={course.image.alt} />
         <div>
           <button>
             <FcLike />

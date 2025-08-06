@@ -1,9 +1,9 @@
-import "./Spinner.css";
+import "./Loader.css";
 const Spinner = () => {
   return (
     <div className="spinner-div">
       <div class="spinner">
-        
+    
       </div>
       <p className="loading">Loading..</p>
     </div>
