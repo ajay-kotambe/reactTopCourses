@@ -3,9 +3,9 @@ import "./Filter.css";
 
 const Filter = ({ filterData }) => {
   return (
-    <div>
+    <div className="filter-container">
       {filterData.map((data) => {
-        return <button key={data.id}>{data.title}</button>;
+        return <button key={data.id}>{data.title} </button>;
       })}
     </div>
   );

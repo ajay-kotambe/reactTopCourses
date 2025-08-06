@@ -2,9 +2,9 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav>
-        <h2>Top Courses</h2>
+    <div >
+      <nav className="navbar">
+        <h1 >Top Courses</h1>
       </nav>
     </div>
   );

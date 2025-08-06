@@ -12,7 +12,7 @@ const Cards = ({ courses }) => {
     return allCourses;
   };
   return (
-    <div>
+    <div className="cards-wrapper">
       {getCourses().map((course) => {
         return <Card key={course.id} course={course} />;
       })}

@@ -35,7 +35,7 @@ function App() {
     setLoading(false);
   };
   return (
-    <div className="">
+    <div className="App">
       <div>
         <Navbar />
       </div>

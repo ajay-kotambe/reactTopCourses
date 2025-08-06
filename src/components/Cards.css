@@ -1,0 +1,24 @@
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+  max-width: 1300px;
+  margin: auto;
+  justify-content: center;
+
+}
+/* .cards-wrapper {
+  background-color: red !important;
+} */
+
+/* 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-content: center; 
+  width: 90vw;
+  max-width: 1200px;
+  margin-top: 30px;
+} */
