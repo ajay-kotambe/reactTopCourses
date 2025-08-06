@@ -5,11 +5,9 @@ import { toast } from "react-toastify";
 
 const Card = ({ course }) => {
   const [isLiked, setIsLiked] = useState(false);
-
   const onClickHandler = () => {
     const newState = !isLiked;
     setIsLiked(newState);
-
     if (newState) {
       toast.success("Content liked!");
     } else {
@@ -28,6 +26,7 @@ const Card = ({ course }) => {
         </div>
         <div className="card-content">
           <h3>{course.title}</h3>
+          {/* <p>{course.description.length>100 ? course.description.substr(0,100):course.description }</p> */}
           <p>{course.description}</p>
         </div>
       </div>

@@ -2,12 +2,23 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding: 20px 40px;
-  max-width: 1300px;
-  margin: auto;
-  justify-content: center;
 
+
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
 }
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
 /* .cards-wrapper {
   background-color: red !important;
 } */

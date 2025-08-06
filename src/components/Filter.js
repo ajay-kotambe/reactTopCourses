@@ -1,11 +1,22 @@
 // import React from "react";
 import "./Filter.css";
 
-const Filter = ({ filterData }) => {
+const Filter = ({ filterData, category, setCategory }) => {
+  const filterHandler = (title) => {
+    setCategory(title);
+  };
   return (
     <div className="filter-container">
       {filterData.map((data) => {
-        return <button key={data.id}>{data.title} </button>;
+        return (
+          <button
+            key={data.id}
+            className={category === data.title ? "active" : ""}
+            onClick={() => filterHandler(data.title)}
+          >
+            {data.title}
+          </button>
+        );
       })}
     </div>
   );

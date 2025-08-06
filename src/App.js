@@ -13,8 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 // import CheckIconsNToast from "./components/CheckIconsNToast";
 
 function App() {
-  const [courses, setCourses] = useState(null);// useState([]) can use this if u don't have loader component
+  const [courses, setCourses] = useState(null); // useState([]) can use this if u don't have loader component
   const [loading, setLoading] = useState(true);
+
+  const [category, setCategory] = useState("All"); // useState(filterData[0].title)
 
   useEffect(() => {
     fetchData();
@@ -40,12 +42,16 @@ function App() {
         <Navbar />
       </div>
       <div>
-        <Filter filterData={filterData} />
+        <Filter
+          filterData={filterData}
+          category={category}
+          setCategory={setCategory}
+        />
       </div>
-      <div>{loading ? <Spinner /> : <Cards courses={courses} />}</div>
+      <div>{loading ? <Spinner /> : <Cards courses={courses}  category={category}/>}</div>
       {/* <CheckIconsNToast/> */}
       {/* Required continer to show the toast */}
-      <ToastContainer />
+      <ToastContainer position="bottom-right" />
     </div>
   );
 }
