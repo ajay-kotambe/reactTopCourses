@@ -13,7 +13,7 @@ const Filter = ({ filterData, category, setCategory }) => {
             key={data.id}
             className={category === data.title ? "active" : ""}
             onClick={() => filterHandler(data.title)}
-          >
+          > 
             {data.title}
           </button>
         );

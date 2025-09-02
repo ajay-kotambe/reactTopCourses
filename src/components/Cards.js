@@ -32,7 +32,7 @@ const Cards = ({ courses, category }) => {
     <div className="cards-container">
       <div className="cards-wrapper">
         {courseIndicator ? (
-          <NoDataFound>No Data Found...</NoDataFound>
+          <NoDataFound />
         ) : (
           getCourses().map((course) => {
             return <Card key={course.id} course={course} />;

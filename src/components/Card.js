@@ -8,7 +8,7 @@ const Card = ({ course }) => {
   const onClickHandler = () => {
     const newState = !isLiked;
     setIsLiked(newState);
-    if (newState) {
+    if (!newState) {
       toast.success("Content liked!");
     } else {
       toast.warn("Content disliked!");

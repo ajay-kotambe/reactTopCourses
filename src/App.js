@@ -15,12 +15,13 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [courses, setCourses] = useState([]); // useState(null) can use this if u don't have loader component
   const [loading, setLoading] = useState(true);
-
   const [category, setCategory] = useState("All"); // useState(filterData[0].title)
 
   useEffect(() => {
     fetchData();
   }, []);
+
+
   const fetchData = async () => {
     setLoading(true);
     try {
